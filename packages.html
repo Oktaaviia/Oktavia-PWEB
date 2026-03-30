@@ -1,57 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Paket Desain</title>
+<title>Packages</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h2>PixelStudio</h2>
+  <nav class="navbar">
+    <h2>PixelStudio</h2>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="packages.html">Packages</a>
-<a href="contact.html">Contact</a>
-<a href="dashboard.html">My Orders</a>
-<a href="order.html" class="btn">Order Now</a>
-</nav>
-
+    <section class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="packages.html">Packages</a>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html">My Orders</a>
+      <a href="order.html" class="btn">Order Now</a>
+    </section>
+  </nav>
 </header>
 
+<main>
 
-<div class="container">
+  <section class="layout">
 
-<h1>Paket Desain</h1>
+    <!-- SIDEBAR FILTER -->
+    <aside class="sidebar">
+      <h3>Filter Paket</h3>
+      <label><input type="checkbox"> Basic</label>
+      <label><input type="checkbox"> Standard</label>
+      <label><input type="checkbox"> Premium</label>
+    </aside>
 
-<div class="card">
-<h3>Basic</h3>
-<p>1 Konsep Desain</p>
-<p>2 Revisi</p>
-<p>Harga: Rp 700.000</p>
-<a href="order.html">Pesan</a>
-</div>
+    <!-- CONTENT -->
+    <section class="packages">
+      <h1>Paket Desain</h1>
 
-<div class="card">
-<h3>Standard</h3>
-<p>3 Konsep Desain</p>
-<p>5 Revisi</p>
-<p>Harga: Rp 1.500.000</p>
-<a href="order.html">Pesan</a>
-</div>
+      <!-- GRID CARD -->
+      <section class="grid">
 
-<div class="card">
-<h3>Premium</h3>
-<p>Konsep Unlimited</p>
-<p>Branding Lengkap</p>
-<p>Harga: Rp 3.000.000</p>
-<a href="order.html">Pesan</a>
-</div>
+        <article class="card">
+          <h3>Basic</h3>
+          <p>1 Konsep Desain</p>
+          <p>2 Revisi</p>
+          <p>Harga: Rp 700.000</p>
+          <a href="order.html" class="btn">Pesan</a>
+        </article>
 
-</div>
+        <article class="card">
+          <h3>Standard</h3>
+          <p>3 Konsep Desain</p>
+          <p>5 Revisi</p>
+          <p>Harga: Rp 1.500.000</p>
+          <a href="order.html" class="btn">Pesan</a>
+        </article>
+
+        <article class="card">
+          <h3>Premium</h3>
+          <p>Konsep Unlimited</p>
+          <p>Branding Lengkap</p>
+          <p>Harga: Rp 3.000.000</p>
+          <a href="order.html" class="btn">Pesan</a>
+        </article>
+
+      </section>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <section>About</section>
+  <section>Services</section>
+  <section>Contact</section>
+</footer>
 
 </body>
 </html>

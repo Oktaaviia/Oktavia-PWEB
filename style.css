@@ -1,39 +1,153 @@
-body{
-font-family: Arial;
-margin:0;
+body {
+  font-family: Arial;
+  margin: 0;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-border-bottom:1px solid #ccc;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
 }
 
-nav a{
-margin-right:20px;
-text-decoration:none;
-color:black;
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
 }
 
-.container{
-padding:60px;
+.hero {
+  background: linear-gradient(to right, purple, blue);
+  color: white;
+  padding: 120px 60px;
+  margin-top: 80px;
 }
 
-.hero h1{
-font-size:50px;
+.hero h1 {
+  font-size: 50px;
 }
 
-.btn{
-border:1px solid black;
-padding:10px 20px;
-text-decoration:none;
-margin-right:10px;
+.btn {
+  color: #ccc;
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
-.card{
-border:1px solid black;
-padding:20px;
-margin-bottom:20px;
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+}
+
+.sidebar {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input:focus {
+  border: 2px solid blue;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: blue;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background: #eee;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.search form {
+  display: flex;
+  gap: 10px;
+}
+
+.search input {
+  flex: 1;
+}
+
+main {
+  margin-top: 100px;
+}
+.menu {
+  display: flex;
+  align-items: center;
 }

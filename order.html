@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Order Desain</title>
+<title>Order</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h2>PixelStudio</h2>
+  <h2>PixelStudio</h2>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="packages.html">Packages</a>
-<a href="contact.html">Contact</a>
-<a href="dashboard.html">My Orders</a>
-<a href="order.html" class="btn">Order Now</a>
-</nav>
-
+  <nav>
+    <section class="menu"></section>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">My Orders</a>
+        <a href="order.html" class="btn">Order Now</a>
+        </section>
+    </nav>
 </header>
 
+<!-- PENGGANTI CONTAINER -->
+<main>
 
-<div class="container">
+  <section class="order-form">
+    <h1>Form Pemesanan</h1>
 
-<h1>Form Pemesanan</h1>
+    <form>
 
-<form>
+      <p>Jenis Desain</p>
+      <select>
+        <option>Logo</option>
+        <option>Poster</option>
+        <option>Social Media</option>
+      </select>
 
-<p>Jenis Desain</p>
-<select>
-<option>Logo</option>
-<option>Poster</option>
-<option>Social Media</option>
-</select>
+      <p>Paket</p>
+      <select>
+        <option>Basic</option>
+        <option>Standard</option>
+        <option>Premium</option>
+      </select>
 
-<br><br>
+      <p>Deskripsi</p>
+      <textarea rows="5"></textarea>
 
-<p>Paket</p>
-<select>
-<option>Basic</option>
-<option>Standard</option>
-<option>Premium</option>
-</select>
+      <button>Kirim Pesanan</button>
 
-<br><br>
+    </form>
 
-<p>Deskripsi</p>
-<textarea rows="5"></textarea>
+  </section>
 
-<br><br>
-
-<button>Kirim Pesanan</button>
-
-</form>
-
-</div>
+</main>
 
 </body>
 </html>
