@@ -1,84 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Packages</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paket Harga — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <nav class="navbar">
-    <h2>PixelStudio</h2>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
+    </nav>
+  </header>
 
-    <section class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="packages.html">Packages</a>
-      <a href="contact.html">Contact</a>
-      <a href="dashboard.html">My Orders</a>
-      <a href="order.html" class="btn">Order Now</a>
+  <main>
+
+    <section class="page-hero">
+      <h1>Paket Harga</h1>
+      <p>Pilih jenis layanan, lalu temukan paket yang paling sesuai kebutuhan Anda.</p>
     </section>
-  </nav>
-</header>
 
-<main>
+    <!-- TAB FILTER LAYANAN -->
+    <section class="layanan-tabs-section">
+      <nav class="layanan-tabs" id="layanan-tabs" aria-label="Filter jenis layanan">
+        <button class="tab-btn active" data-layanan="semua">Semua</button>
+        <button class="tab-btn" data-layanan="Logo">🎨 Logo</button>
+        <button class="tab-btn" data-layanan="Poster">📢 Poster</button>
+        <button class="tab-btn" data-layanan="Social Media">📱 Social Media</button>
+        <button class="tab-btn" data-layanan="Branding">🏢 Branding</button>
+      </nav>
+    </section>
 
-  <section class="layout">
+    <section class="layout">
 
-    <!-- SIDEBAR FILTER -->
-    <aside class="sidebar">
-      <h3>Filter Paket</h3>
-      <label><input type="checkbox"> Basic</label>
-      <label><input type="checkbox"> Standard</label>
-      <label><input type="checkbox"> Premium</label>
-    </aside>
+      <!-- SIDEBAR FILTER SAJA (form admin sudah pindah ke modal) -->
+      <aside class="sidebar">
+        <h3>Tier Paket</h3>
+        <label><input type="checkbox" class="tier-filter" value="Basic"> Basic</label>
+        <label><input type="checkbox" class="tier-filter" value="Standard"> Standard</label>
+        <label><input type="checkbox" class="tier-filter" value="Premium"> Premium</label>
 
-    <!-- CONTENT -->
-    <section class="packages">
-      <h1>Paket Desain</h1>
+        <h3 style="margin-top:24px">Rentang Harga</h3>
+        <label><input type="checkbox" class="price-filter" value="0-1000000"> Di bawah Rp 1 jt</label>
+        <label><input type="checkbox" class="price-filter" value="1000000-2000000"> Rp 1 – 2 jt</label>
+        <label><input type="checkbox" class="price-filter" value="2000000-99999999"> Di atas Rp 2 jt</label>
 
-      <!-- GRID CARD -->
-      <section class="grid">
+        <!-- Tombol Tambah Paket — hanya muncul untuk admin -->
+        <button id="btn-tambah-paket" class="btn-primary"
+          style="display:none; width:100%; margin-top:28px; padding:10px">
+          + Tambah Paket
+        </button>
+      </aside>
 
-        <article class="card">
-          <h3>Basic</h3>
-          <p>1 Konsep Desain</p>
-          <p>2 Revisi</p>
-          <p>Harga: Rp 700.000</p>
-          <a href="order.html" class="btn">Pesan</a>
-        </article>
+      <!-- KONTEN PAKET -->
+      <section class="packages-content">
+        <header style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+          <h2 id="pkg-content-title" style="font-family:'Playfair Display',serif;font-size:1.4rem">Semua Paket</h2>
+          <p id="pkg-count" style="font-size:.82rem;color:#9ca3af;font-style:italic"></p>
+        </header>
 
-        <article class="card">
-          <h3>Standard</h3>
-          <p>3 Konsep Desain</p>
-          <p>5 Revisi</p>
-          <p>Harga: Rp 1.500.000</p>
-          <a href="order.html" class="btn">Pesan</a>
-        </article>
+        <!-- GRID KARTU PAKET -->
+        <section class="grid pkg-grid" id="pkg-grid"></section>
 
-        <article class="card">
-          <h3>Premium</h3>
-          <p>Konsep Unlimited</p>
-          <p>Branding Lengkap</p>
-          <p>Harga: Rp 3.000.000</p>
-          <a href="order.html" class="btn">Pesan</a>
-        </article>
+        <!-- EMPTY STATE -->
+        <p id="pkg-empty" style="display:none;color:#9ca3af;padding:40px 0;text-align:center;font-size:.9rem">
+          Tidak ada paket ditemukan.
+        </p>
+
+        <!-- TABEL PERBANDINGAN -->
+        <section class="compare-section" id="compare-section" style="display:none">
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:20px">
+            Perbandingan Paket
+          </h2>
+          <div class="table-scroll">
+            <table class="compare-table">
+              <thead id="compare-thead"></thead>
+              <tbody id="compare-tbody"></tbody>
+              <tfoot id="compare-tfoot"></tfoot>
+            </table>
+          </div>
+        </section>
 
       </section>
-
     </section>
 
-  </section>
+  </main>
 
-</main>
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="order.html">Pesan Sekarang</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 support@pixelstudio.com</p>
+      </address>
+    </section>
+  </footer>
 
-<footer class="footer">
-  <section>About</section>
-  <section>Services</section>
-  <section>Contact</section>
-</footer>
+  <!-- MODAL FORM PAKET (admin) -->
+  <dialog id="pkg-modal" class="pkg-modal">
+    <article class="pkg-modal-card">
+      <header class="pkg-modal-header">
+        <h2 id="modal-title">Tambah Paket Baru</h2>
+        <button type="button" id="btn-modal-close" class="modal-close" aria-label="Tutup">✕</button>
+      </header>
 
+      <form id="admin-pkg-form" novalidate>
+        <fieldset>
+          <legend class="sr-only">Form Paket Desain</legend>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="pkg-layanan">Jenis Layanan</label>
+              <select id="pkg-layanan">
+                <option value="">-- Pilih Layanan --</option>
+                <option value="Logo">Logo</option>
+                <option value="Poster">Poster</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Branding">Branding</option>
+              </select>
+              <span class="error-msg" id="err-pkg-layanan"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-tier">Tier Paket</label>
+              <select id="pkg-tier">
+                <option value="">-- Pilih Tier --</option>
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+              </select>
+              <span class="error-msg" id="err-pkg-tier"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-nama">Nama Paket</label>
+              <input type="text" id="pkg-nama" placeholder="cth: Logo Basic">
+              <span class="error-msg" id="err-pkg-nama"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-harga">Harga (Rp)</label>
+              <input type="number" id="pkg-harga" placeholder="cth: 700000" min="1">
+              <span class="error-msg" id="err-pkg-harga"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-konsep">Jumlah Konsep</label>
+              <input type="text" id="pkg-konsep" placeholder="cth: 1  atau  Unlimited">
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-revisi">Jumlah Revisi</label>
+              <input type="text" id="pkg-revisi" placeholder="cth: 2x  atau  Unlimited">
+            </div>
+
+            <div class="form-group">
+              <label for="pkg-waktu">Waktu Pengerjaan</label>
+              <input type="text" id="pkg-waktu" placeholder="cth: 3-5 Hari">
+            </div>
+
+            <div class="form-group">
+              <label style="text-transform:none;font-size:.85rem;flex-direction:row;align-items:center;gap:8px;display:flex">
+                <input type="checkbox" id="pkg-populer" style="width:auto;margin:0">
+                Tandai sebagai "Populer"
+              </label>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="pkg-fitur">Fitur Tambahan</label>
+              <textarea id="pkg-fitur" rows="4"
+                placeholder="Satu fitur per baris&#10;cth: File Source (AI/EPS)&#10;Panduan Brand Lengkap"></textarea>
+              <small>Tulis satu fitur per baris</small>
+            </div>
+
+            <div class="form-actions full-width">
+              <button type="submit" id="btn-pkg-submit" class="btn-primary">Simpan Paket</button>
+              <button type="button" id="btn-pkg-cancel" class="btn-secondary">Batal</button>
+            </div>
+
+          </div>
+        </fieldset>
+      </form>
+    </article>
+  </dialog>
+
+  <output id="notification" role="status" aria-live="polite"></o>
+  <script src="script.js"></script>
 </body>
 </html>

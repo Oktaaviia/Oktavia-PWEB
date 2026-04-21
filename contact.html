@@ -1,37 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Kontak</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h2>PixelStudio</h2>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="dashboard.html">My Orders</a>
-    <a href="order.html" class="btn">Order Now</a>
-  </nav>
-</header>
+  <main>
 
-<main>
+    <section class="page-hero">
+      <h1>Hubungi Kami</h1>
+      <p>Ada pertanyaan atau ingin konsultasi? Kami siap membantu!</p>
+    </section>
 
-  <section>
-    <h1>Hubungi Kami</h1>
+    <section class="contact-layout">
 
-    <p>Email: support@pixelstudio.com</p>
-    <p>WhatsApp: 0812-3456-7890</p>
-    <p>Instagram: @pixelstudio</p>
-  </section>
+      <!-- INFO KONTAK -->
+      <section class="contact-info">
+        <h2>Informasi Kontak</h2>
+        <address>
+          <article class="contact-item">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:support@pixelstudio.com">support@pixelstudio.com</a></p>
+          </article>
+          <article class="contact-item">
+            <h3>📱 WhatsApp</h3>
+            <p><a href="tel:+6281234567890">0812-3456-7890</a></p>
+          </article>
+          <article class="contact-item">
+            <h3>📸 Instagram</h3>
+            <p><a href="#" target="_blank">@pixelstudio</a></p>
+          </article>
+          <article class="contact-item">
+            <h3>🕐 Jam Operasional</h3>
+            <p>
+              <time datetime="08:00">Senin – Jumat: 08.00</time> –
+              <time datetime="17:00">17.00 WIB</time>
+            </p>
+          </article>
+        </address>
 
-</main>
+        <aside class="faq-aside">
+          <h3>FAQ</h3>
+          <details>
+            <summary>Berapa lama proses pengerjaan?</summary>
+            <p>Basic 3-5 hari, Standard 5-7 hari, Premium 7-14 hari kerja setelah brief disetujui.</p>
+          </details>
+          <details>
+            <summary>Bagaimana cara pembayaran?</summary>
+            <p>Transfer bank / e-wallet. DP 50% di awal, pelunasan setelah revisi final disetujui.</p>
+          </details>
+          <details>
+            <summary>Apakah bisa request di luar paket?</summary>
+            <p>Bisa! Hubungi kami langsung untuk mendapatkan penawaran custom sesuai kebutuhan.</p>
+          </details>
+          <details>
+            <summary>Format file apa yang dikirimkan?</summary>
+            <p>PNG, JPG, PDF untuk semua paket. File source AI/EPS tersedia di paket Standard dan Premium.</p>
+          </details>
+        </aside>
+      </section>
 
+      <!-- FORM KONTAK -->
+      <section class="contact-form-section">
+        <h2>Kirim Pesan</h2>
+        <form id="contact-form" novalidate>
+          <fieldset>
+            <legend>Form Kontak</legend>
+
+            <div class="form-group">
+              <label for="nama-kontak">Nama Lengkap</label>
+              <input type="text" id="nama-kontak" name="nama" placeholder="Nama Anda" required>
+              <span class="error-msg" id="error-nama-kontak"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email-kontak">Email</label>
+              <input type="email" id="email-kontak" name="email" placeholder="nama@email.com" required>
+              <span class="error-msg" id="error-email-kontak"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subjek">Subjek</label>
+              <select id="subjek" name="subjek">
+                <option value="">-- Pilih Subjek --</option>
+                <option value="konsultasi">Konsultasi Desain</option>
+                <option value="harga">Tanya Harga</option>
+                <option value="revisi">Permintaan Revisi</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+              <span class="error-msg" id="error-pesan"></span>
+            </div>
+
+            <button type="submit" class="btn-primary">Kirim Pesan</button>
+          </fieldset>
+        </form>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="packages.html">Paket Desain</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 support@pixelstudio.com</p>
+      </address>
+    </section>
+  </footer>
+
+  <output id="notification" role="status" aria-live="polite"></o>
+  <script src="script.js"></script>
 </body>
 </html>

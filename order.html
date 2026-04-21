@@ -1,60 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Order</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Desain — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h2>PixelStudio</h2>
-
-  <nav>
-    <section class="menu"></section>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="packages.html">Packages</a>
         <a href="contact.html">Contact</a>
-        <a href="dashboard.html">My Orders</a>
-        <a href="order.html" class="btn">Order Now</a>
-        </section>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
     </nav>
-</header>
+  </header>
 
-<!-- PENGGANTI CONTAINER -->
-<main>
+  <main>
+    <article class="order-wrapper">
 
-  <section class="order-form">
-    <h1>Form Pemesanan</h1>
+      <!-- LOGIN WALL — muncul kalau belum login -->
+      <section id="login-wall" style="display:none">
+        <div class="login-wall-box">
+          <p class="login-wall-icon">🔐</p>
+          <h2>Masuk untuk Memesan</h2>
+          <p>Kamu perlu login atau daftar dulu untuk bisa mengisi form pesanan.</p>
+          <div class="login-wall-actions">
+            <a href="login.html" class="btn-hero-primary" style="display:inline-block;text-decoration:none">Masuk</a>
+            <a href="register.html" class="btn-hero-outline" style="display:inline-block;text-decoration:none;border:1.5px solid #6d28d9;color:#6d28d9;padding:12px 28px;border-radius:6px;font-weight:600;font-size:.9rem;transition:all .2s">Daftar</a>
+          </div>
+        </div>
+      </section>
 
-    <form>
+      <!-- KONTEN ORDER — muncul setelah login -->
+      <section id="order-content" style="display:none">
 
-      <p>Jenis Desain</p>
-      <select>
-        <option>Logo</option>
-        <option>Poster</option>
-        <option>Social Media</option>
-      </select>
+      <h1 class="page-title">Form Pemesanan</h1>
+      <p class="page-subtitle">Isi form di bawah untuk memesan layanan desain PixelStudio.</p>
 
-      <p>Paket</p>
-      <select>
-        <option>Basic</option>
-        <option>Standard</option>
-        <option>Premium</option>
-      </select>
+      <!-- STATISTIK -->
+      <section class="stats-bar" id="stats-bar" aria-label="Statistik pesanan" style="display:none">
+        <ul class="stats-grid">
+          <li class="stat-card">
+            <h3>Total Pesanan</h3>
+            <p id="stat-total" class="stat-value">0</p>
+          </li>
+          <li class="stat-card">
+            <h3>Total Nilai</h3>
+            <p id="stat-nilai" class="stat-value">Rp 0</p>
+          </li>
+          <li class="stat-card">
+            <h3>Diproses</h3>
+            <p id="stat-pending" class="stat-value">0</p>
+          </li>
+        </ul>
+      </section>
 
-      <p>Deskripsi</p>
-      <textarea rows="5"></textarea>
+      <!-- FORM PEMESANAN -->
+      <section class="form-card">
+        <h2 id="form-title">Detail Pesanan</h2>
+        <form id="order-form" novalidate>
+          <fieldset>
+            <legend>Informasi Pemesan &amp; Proyek</legend>
+            <div class="form-grid">
 
-      <button>Kirim Pesanan</button>
+              <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso">
+                <span class="error-msg" id="error-nama"></span>
+              </div>
 
-    </form>
+              <div class="form-group">
+                <label for="email-order">Email</label>
+                <input type="email" id="email-order" name="email" placeholder="nama@email.com">
+                <span class="error-msg" id="error-email-order"></span>
+              </div>
 
-  </section>
+              <div class="form-group">
+                <label for="hp">No. WhatsApp</label>
+                <input type="tel" id="hp" name="hp" placeholder="08xx-xxxx-xxxx">
+                <span class="error-msg" id="error-hp"></span>
+              </div>
 
-</main>
+              <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input type="date" id="deadline" name="deadline">
+                <span class="error-msg" id="error-deadline"></span>
+              </div>
 
+              <div class="form-group">
+                <label for="layanan">Jenis Layanan</label>
+                <select id="layanan" name="layanan">
+                  <option value="">-- Pilih Layanan --</option>
+                  <option value="Logo">Desain Logo</option>
+                  <option value="Poster">Poster &amp; Banner</option>
+                  <option value="Social Media">Konten Social Media</option>
+                  <option value="Branding">Branding Lengkap</option>
+                </select>
+                <span class="error-msg" id="error-layanan"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="paket-options">Paket Desain</label>
+                <select id="paket-options" name="paket">
+                  <option value="">-- Pilih layanan dulu --</option>
+                </select>
+                <p id="harga-preview" class="harga-preview"></p>
+                <span class="error-msg" id="error-paket"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="warna">Referensi Warna</label>
+                <input type="text" id="warna" name="warna" placeholder="Contoh: biru, minimalis, modern">
+              </div>
+
+              <div class="form-group">
+                <label for="tgl-order">Tanggal Order</label>
+                <input type="date" id="tgl-order" name="tgl_order" readonly>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="deskripsi">Deskripsi Proyek</label>
+                <textarea id="deskripsi" name="deskripsi" rows="4"
+                  placeholder="Ceritakan kebutuhan desainmu secara detail (minimal 10 karakter)..."></textarea>
+                <span class="error-msg" id="error-deskripsi"></span>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="referensi">Upload Referensi (opsional)</label>
+                <input type="file" id="referensi" name="referensi" accept="image/*,.pdf">
+                <small>Format: JPG, PNG, PDF. Maks 5MB.</small>
+              </div>
+
+              <div class="form-actions full-width">
+                <button type="submit" id="btn-submit" class="btn-primary">Kirim Pesanan</button>
+                <button type="button" id="btn-cancel" class="btn-secondary" style="display:none">Batal Edit</button>
+              </div>
+
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- TABEL DAFTAR PESANAN -->
+      <section class="table-card" id="order-table-section">
+        <header class="table-header">
+          <h2 id="table-title">Pesanan Saya</h2>
+          <div class="table-controls">
+            <input type="text" id="search-input" class="search-input" placeholder="Cari nama / ID / layanan...">
+            <select id="filter-paket" class="filter-select">
+              <option value="">Semua Paket</option>
+              <option value="Basic">Basic</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+            </select>
+            <select id="filter-status" class="filter-select">
+              <option value="">Semua Status</option>
+              <option value="Pending">Pending</option>
+              <option value="Dikerjakan">Dikerjakan</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+            <button id="btn-reset-all" class="btn-danger" style="display:none">Hapus Semua</button>
+          </div>
+        </header>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Layanan</th>
+                <th>Paket</th>
+                <th>Deadline</th>
+                <th>Harga</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="order-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      </section><!-- end #order-content -->
+    </article>
+  </main>
+
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="packages.html">Paket Desain</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>support@pixelstudio.com</p>
+        <p>0812-3456-7890</p>
+      </address>
+    </section>
+  </footer>
+
+  <output id="notification" role="status" aria-live="polite"></output>
+  <script src="script.js"></script>
 </body>
 </html>

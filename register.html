@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akun — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+  <main class="auth-wrapper">
+    <article class="auth-card">
+
+      <header class="auth-header">
+        <a href="index.html" class="logo auth-logo">PixelStudio</a>
+        <h1>Buat Akun Baru</h1>
+        <p>Daftarkan diri untuk mulai memesan desain</p>
+      </header>
+
+      <form id="register-form" novalidate>
+        <fieldset>
+          <legend>Data Pendaftaran</legend>
+
+          <div class="form-group">
+            <label for="reg-nama">Nama Lengkap</label>
+            <input type="text" id="reg-nama" name="nama"
+              placeholder="Nama lengkap Anda" autocomplete="name">
+            <span class="error-msg" id="error-reg-nama"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" name="email"
+              placeholder="nama@email.com" autocomplete="email">
+            <span class="error-msg" id="error-reg-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-hp">No. WhatsApp</label>
+            <input type="tel" id="reg-hp" name="hp"
+              placeholder="08xx-xxxx-xxxx" autocomplete="tel">
+            <span class="error-msg" id="error-reg-hp"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <div class="input-pw-wrap">
+              <input type="password" id="reg-password" name="password"
+                placeholder="Minimal 6 karakter" autocomplete="new-password">
+              <button type="button" id="toggle-pw-reg" class="toggle-pw" aria-label="Lihat password">👁</button>
+            </div>
+            <span class="error-msg" id="error-reg-password"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-confirm">Konfirmasi Password</label>
+            <input type="password" id="reg-confirm" name="confirm"
+              placeholder="Ulangi password" autocomplete="new-password">
+            <span class="error-msg" id="error-reg-confirm"></span>
+          </div>
+
+          <span class="error-msg" id="error-register" style="display:block;margin-bottom:12px"></span>
+
+          <button type="submit" class="btn-full">Buat Akun</button>
+        </fieldset>
+      </form>
+
+      <footer class="auth-footer">
+        <p>Sudah punya akun? <a href="login.html">Masuk di sini</a></p>
+        <p style="margin-top:8px">
+          <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+        </p>
+      </footer>
+
+    </article>
+  </main>
+
+  <output id="notification" role="status" aria-live="polite"></o>
+  <script src="script.js"></script>
+</body>
+</html>

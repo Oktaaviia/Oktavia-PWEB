@@ -1,69 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <nav class="navbar">
-    <h2>PixelStudio</h2>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
+    </nav>
+  </header>
 
-    <section class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="packages.html">Packages</a>
-      <a href="contact.html">Contact</a>
-      <a href="dashboard.html">My Orders</a>
-      <a href="order.html" class="btn">Order Now</a>
+  <main>
+
+    <section class="page-hero">
+      <h1>Portfolio Kami</h1>
+      <p>Koleksi karya terbaik yang telah kami hasilkan untuk klien-klien kami.</p>
     </section>
-  </nav>
-</header>
 
-<main>
+    <!-- SEARCH -->
+    <section class="search-section">
+      <form class="search-form" role="search" onsubmit="return false">
+        <label for="search-portfolio" class="sr-only">Cari desain</label>
+        <input type="search" id="search-portfolio" placeholder="Cari desain...">
+        <button type="submit">Cari</button>
+      </form>
+    </section>
 
-  <!-- SEARCH -->
-  <section class="search">
-    <h3>Cari Desain</h3>
-    <form>
-      <input type="text" placeholder="Cari desain...">
-      <button type="submit">Cari</button>
-    </form>
-  </section>
+    <!-- LAYOUT: SIDEBAR FILTER + GRID -->
+    <section class="layout">
 
-  <!-- GRID -->
-  <section class="grid">
-    <article class="card">
-      <h3>Desain Logo</h3>
-      <p>Contoh desain logo untuk berbagai brand.</p>
-    </article>
+      <aside class="sidebar">
+        <h3>Filter Kategori</h3>
+        <label><input type="checkbox" value="Logo" class="filter-check"> Logo</label>
+        <label><input type="checkbox" value="Poster" class="filter-check"> Poster</label>
+        <label><input type="checkbox" value="Social Media" class="filter-check"> Social Media</label>
+        <label><input type="checkbox" value="Branding" class="filter-check"> Branding</label>
+      </aside>
 
-    <article class="card">
-      <h3>Desain Poster</h3>
-      <p>Poster promosi untuk event dan bisnis.</p>
-    </article>
+      <section class="portfolio-content">
+        <h2>Semua Karya</h2>
+        <section class="grid" id="portfolio-grid">
 
-    <article class="card">
-      <h3>Konten Sosial Media</h3>
-      <p>Template Instagram dan digital marketing.</p>
-    </article>
+          <article class="card portfolio-card" data-kategori="Logo">
+            <figure>
+              <img src="https://picsum.photos/seed/p1/400/300" alt="Desain Logo Brand Kopi Lokal">
+              <figcaption>
+                <h3>Logo Kopi Lokal</h3>
+                <p>Desain logo untuk brand kopi artisanal lokal dengan konsep earthy dan modern.</p>
+                <span class="badge">Logo</span>
+              </figcaption>
+            </figure>
+          </article>
 
-    <article class="card">
-      <h3>Branding</h3>
-      <p>Paket identitas visual lengkap untuk bisnis.</p>
-    </article>
-  </section>
+          <article class="card portfolio-card" data-kategori="Poster">
+            <figure>
+              <img src="https://picsum.photos/seed/p2/400/300" alt="Poster Event Musik Kampus">
+              <figcaption>
+                <h3>Poster Event Musik</h3>
+                <p>Poster promosi event musik kampus dengan desain dinamis dan energik.</p>
+                <span class="badge">Poster</span>
+              </figcaption>
+            </figure>
+          </article>
 
-</main>
+          <article class="card portfolio-card" data-kategori="Social Media">
+            <figure>
+              <img src="https://picsum.photos/seed/p3/400/300" alt="Template Instagram Bisnis">
+              <figcaption>
+                <h3>Template Instagram</h3>
+                <p>Set template feed Instagram untuk bisnis kuliner yang konsisten dan menarik.</p>
+                <span class="badge">Social Media</span>
+              </figcaption>
+            </figure>
+          </article>
 
-<footer class="footer">
-  <section>About</section>
-  <section>Services</section>
-  <section>Contact</section>
-</footer>
+          <article class="card portfolio-card" data-kategori="Branding">
+            <figure>
+              <img src="https://picsum.photos/seed/p4/400/300" alt="Branding Lengkap UMKM">
+              <figcaption>
+                <h3>Branding UMKM Baju</h3>
+                <p>Paket branding lengkap meliputi logo, stationery, dan panduan brand.</p>
+                <span class="badge">Branding</span>
+              </figcaption>
+            </figure>
+          </article>
 
+          <article class="card portfolio-card" data-kategori="Logo">
+            <figure>
+              <img src="https://picsum.photos/seed/p5/400/300" alt="Logo Startup Tech">
+              <figcaption>
+                <h3>Logo Startup Tech</h3>
+                <p>Logo minimalis untuk startup teknologi dengan kesan inovatif dan modern.</p>
+                <span class="badge">Logo</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="card portfolio-card" data-kategori="Poster">
+            <figure>
+              <img src="https://picsum.photos/seed/p6/400/300" alt="Banner Promosi Toko Online">
+              <figcaption>
+                <h3>Banner Toko Online</h3>
+                <p>Banner promosi flash sale untuk toko online dengan visual yang eye-catching.</p>
+                <span class="badge">Poster</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="card portfolio-card" data-kategori="Social Media">
+            <figure>
+              <img src="https://picsum.photos/seed/p7/400/300" alt="Konten TikTok Brand">
+              <figcaption>
+                <h3>Konten TikTok Brand</h3>
+                <p>Template thumbnail dan cover untuk konten TikTok brand fashion lokal.</p>
+                <span class="badge">Social Media</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="card portfolio-card" data-kategori="Branding">
+            <figure>
+              <img src="https://picsum.photos/seed/p8/400/300" alt="Branding Klinik Kecantikan">
+              <figcaption>
+                <h3>Branding Klinik</h3>
+                <p>Identitas visual elegan untuk klinik kecantikan dengan nuansa soft dan premium.</p>
+                <span class="badge">Branding</span>
+              </figcaption>
+            </figure>
+          </article>
+
+        </section>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="packages.html">Paket Desain</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 support@pixelstudio.com</p>
+      </address>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

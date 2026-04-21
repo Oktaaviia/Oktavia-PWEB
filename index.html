@@ -1,43 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>PixelStudio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixelStudio — Studio desain grafis profesional untuk logo, poster, branding, dan konten digital.">
+  <meta name="author" content="PixelStudio">
+  <title>PixelStudio — Studio Desain Digital</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <nav class="navbar">
-    <h2>PixelStudio</h2>
-    <section class="menu">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="packages.html">Packages</a>
-      <a href="dashboard.html">My Orders</a>
-      <a href="contact.html">Contact</a>
-      <a href="order.html" class="btn">Order Now</a>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-label">Studio Desain Profesional</p>
+      <h1>Wujudkan Brand Anda<br>dengan Visual Terbaik</h1>
+      <p class="hero-desc">
+        Kami hadir untuk membantu bisnis dan UMKM tampil lebih profesional
+        melalui desain logo, poster, konten media sosial, dan branding lengkap.
+      </p>
+      <a href="order.html" class="btn-hero-primary">Pesan Sekarang</a>
+      <a href="portfolio.html" class="btn-hero-outline">Lihat Portfolio</a>
     </section>
-  </nav>
-</header>
 
-<section class="hero">
-  <p>Studio Desain Profesional</p>
-  <h1>Layanan Desain Grafis Profesional</h1>
-  <p>
-    Ubah brand Anda dengan visual yang menarik. 
-    Tim kami siap membantu bisnis Anda tampil lebih menonjol.
-  </p>
+    <!-- LAYANAN UNGGULAN -->
+    <section class="services-section">
+      <h2 class="section-title">Layanan Kami</h2>
+      <p class="section-sub">Kami menyediakan berbagai layanan desain berkualitas tinggi.</p>
+      <section class="grid">
+        <article class="card">
+          <p class="card-icon">🎨</p>
+          <h3>Desain Logo</h3>
+          <p>Logo profesional yang mencerminkan identitas brand Anda.</p>
+        </article>
+        <article class="card">
+          <p class="card-icon">📢</p>
+          <h3>Poster & Banner</h3>
+          <p>Poster promosi menarik untuk event dan kampanye bisnis.</p>
+        </article>
+        <article class="card">
+          <p class="card-icon">📱</p>
+          <h3>Konten Sosial Media</h3>
+          <p>Template Instagram dan digital marketing yang siap pakai.</p>
+        </article>
+        <article class="card">
+          <p class="card-icon">🏢</p>
+          <h3>Branding Lengkap</h3>
+          <p>Paket identitas visual menyeluruh untuk bisnis Anda.</p>
+        </article>
+      </section>
+    </section>
 
-  <a href="order.html" class="btn">Order Sekarang</a>
-  <a href="portfolio.html" class="btn">Lihat Portfolio</a>
-</section>
+    <!-- STATISTIK -->
+    <section class="stats-section">
+      <article class="stat-item">
+        <p class="stat-number">200+</p>
+        <p class="stat-label">Klien Puas</p>
+      </article>
+      <article class="stat-item">
+        <p class="stat-number">500+</p>
+        <p class="stat-label">Proyek Selesai</p>
+      </article>
+      <article class="stat-item">
+        <p class="stat-number">3+</p>
+        <p class="stat-label">Tahun Pengalaman</p>
+      </article>
+      <article class="stat-item">
+        <p class="stat-number">4.9★</p>
+        <p class="stat-label">Rating Klien</p>
+      </article>
+    </section>
 
-<footer class="footer">
-  <section>About</section>
-  <section>Services</section>
-  <section>Contact</section>
-</footer>
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Siap Mulai Proyek Anda?</h2>
+      <p>Konsultasi gratis dan penawaran terbaik menunggu Anda.</p>
+      <a href="order.html" class="btn-hero-primary">Mulai Pesan</a>
+    </section>
 
+  </main>
+
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional yang membantu bisnis Anda berkembang.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="packages.html">Desain Logo</a></li>
+        <li><a href="packages.html">Poster & Banner</a></li>
+        <li><a href="packages.html">Branding</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 support@pixelstudio.com</p>
+        <p>📱 0812-3456-7890</p>
+        <p>📸 @pixelstudio</p>
+      </address>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

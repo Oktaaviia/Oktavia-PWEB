@@ -1,48 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>About</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h2>PixelStudio</h2>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html" class="btn-nav" id="nav-order">Order Now</a>
+        <a href="login.html" class="btn-nav btn-login" id="nav-login">Login</a>
+      </section>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="dashboard.html">My Orders</a>
-    <a href="order.html" class="btn">Order Now</a>
-  </nav>
-</header>
+  <main>
 
-<main>
+    <section class="page-hero">
+      <h1>Tentang PixelStudio</h1>
+      <p>Kami adalah studio desain grafis yang berfokus pada pembuatan visual kreatif untuk membantu bisnis berkembang.</p>
+    </section>
 
-  <section>
-    <h1>Tentang Kami</h1>
+    <section class="content-section">
+      <article class="about-grid">
+        <section class="about-text">
+          <h2>Siapa Kami?</h2>
+          <p>
+            PixelStudio adalah studio desain grafis profesional yang berdiri sejak 2022.
+            Kami hadir untuk membantu bisnis dan UMKM Indonesia tampil lebih profesional
+            melalui visual yang menarik dan berkarakter.
+          </p>
+          <p>
+            Tim kami terdiri dari desainer berpengalaman yang siap mengubah ide Anda
+            menjadi identitas visual yang kuat dan berkesan di benak pelanggan.
+          </p>
 
-    <p>
-      PixelStudio adalah studio desain grafis yang berfokus pada pembuatan
-      visual kreatif untuk membantu bisnis berkembang.
-    </p>
+          <h3>Nilai Kami</h3>
+          <ul class="value-list">
+            <li><strong>Kreativitas</strong> — Setiap proyek kami kerjakan dengan pendekatan segar dan unik.</li>
+            <li><strong>Kualitas</strong> — Tidak ada kompromi untuk hasil akhir yang memuaskan.</li>
+            <li><strong>Tepat Waktu</strong> — Deadline Anda adalah prioritas kami.</li>
+            <li><strong>Revisi Fleksibel</strong> — Kami pastikan Anda 100% puas dengan hasilnya.</li>
+          </ul>
+        </section>
 
-    <p>
-      Kami menyediakan layanan desain logo, poster, konten media sosial,
-      dan branding lengkap dengan kualitas profesional.
-    </p>
+        <aside class="about-sidebar">
+          <h3>Pencapaian Kami</h3>
+          <dl class="achievement-list">
+            <dt>200+</dt>
+            <dd>Klien yang telah kami layani</dd>
+            <dt>500+</dt>
+            <dd>Proyek yang telah diselesaikan</dd>
+            <dt>3 Tahun</dt>
+            <dd>Pengalaman di industri desain</dd>
+            <dt>4.9 / 5</dt>
+            <dd>Rating kepuasan klien</dd>
+          </dl>
 
-    <p>
-      Tim desainer kami memiliki pengalaman dalam membantu berbagai
-      perusahaan dan UMKM meningkatkan identitas visual mereka.
-    </p>
-  </section>
+          <details>
+            <summary>Pertanyaan Umum</summary>
+            <p>Berapa lama waktu pengerjaan? Tergantung paket: Basic 3-5 hari, Standard 5-7 hari, Premium 7-14 hari.</p>
+          </details>
+          <details>
+            <summary>Apakah ada revisi?</summary>
+            <p>Basic 2 revisi, Standard 5 revisi, Premium unlimited revisi.</p>
+          </details>
+          <details>
+            <summary>Format file yang diberikan?</summary>
+            <p>AI, EPS, PNG, JPG, PDF sesuai kebutuhan Anda.</p>
+          </details>
+        </aside>
+      </article>
+    </section>
 
-</main>
+    <!-- TEAM -->
+    <section class="team-section">
+      <h2 class="section-title">Tim Kami</h2>
+      <section class="grid">
+        <article class="card team-card">
+          <figure>
+            <img src="https://picsum.photos/seed/team1/200/200" alt="Foto Andi Pratama, Lead Designer">
+            <figcaption>
+              <h3>Andi Pratama</h3>
+              <p>Lead Designer</p>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="card team-card">
+          <figure>
+            <img src="https://picsum.photos/seed/team2/200/200" alt="Foto Sari Dewi, UI/UX Designer">
+            <figcaption>
+              <h3>Sari Dewi</h3>
+              <p>UI/UX Designer</p>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="card team-card">
+          <figure>
+            <img src="https://picsum.photos/seed/team3/200/200" alt="Foto Budi Santoso, Branding Specialist">
+            <figcaption>
+              <h3>Budi Santoso</h3>
+              <p>Branding Specialist</p>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="card team-card">
+          <figure>
+            <img src="https://picsum.photos/seed/team4/200/200" alt="Foto Rina Kusuma, Social Media Designer">
+            <figcaption>
+              <h3>Rina Kusuma</h3>
+              <p>Social Media Designer</p>
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+    </section>
 
+  </main>
+
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio</h4>
+      <p>Studio desain grafis profesional yang membantu bisnis Anda berkembang.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="packages.html">Paket Desain</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 support@pixelstudio.com</p>
+        <p>📱 0812-3456-7890</p>
+      </address>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

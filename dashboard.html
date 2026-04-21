@@ -1,48 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Pesananku</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin — PixelStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h2>PixelStudio</h2>
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">PixelStudio</h2>
+      <section class="menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html">Kelola Pesanan</a>
+        <span id="nav-user" class="nav-user"></span>
+        <a href="#" class="btn-nav btn-login" id="nav-logout">Logout</a>
+      </section>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="dashboard.html">My Orders</a>
-    <a href="order.html" class="btn">Order Now</a>
-  </nav>
-</header>
+  <main>
+    <article class="order-wrapper">
 
-<main>
+      <h1 class="page-title">Dashboard Admin</h1>
+      <p class="page-subtitle">Selamat datang! Pantau semua aktivitas pesanan di sini.</p>
 
-  <section class="orders">
-    <h1>Pesanan Saya</h1>
+      <!-- STATISTIK ADMIN -->
+      <section aria-label="Statistik keseluruhan">
+        <ul class="stats-grid">
+          <li class="stat-card">
+            <h3>Total Pesanan</h3>
+            <p id="dash-total" class="stat-value">0</p>
+          </li>
+          <li class="stat-card">
+            <h3>Total Pendapatan</h3>
+            <p id="dash-nilai" class="stat-value">Rp 0</p>
+          </li>
+          <li class="stat-card">
+            <h3>Diproses</h3>
+            <p id="dash-pending" class="stat-value">0</p>
+          </li>
+          <li class="stat-card">
+            <h3>Selesai</h3>
+            <p id="dash-selesai" class="stat-value">0</p>
+          </li>
+        </ul>
+      </section>
 
-    <!-- CARD 1 -->
-    <article class="card">
-      <h3>Desain Logo Brand</h3>
-      <p>Status: Sedang Dikerjakan</p>
-      <p>Deadline: 12 Maret 2026</p>
+      <!-- TABEL SEMUA PESANAN -->
+      <section class="table-card">
+        <header class="table-header">
+          <h2>Semua Pesanan</h2>
+          <div class="table-controls">
+            <input type="text" id="search-admin" class="search-input" placeholder="Cari nama / ID...">
+            <select id="filter-status-admin" class="filter-select">
+              <option value="">Semua Status</option>
+              <option value="Pending">Pending</option>
+              <option value="Dikerjakan">Dikerjakan</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+          </div>
+        </header>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Layanan</th>
+                <th>Paket</th>
+                <th>Deadline</th>
+                <th>Harga</th>
+                <th>Status</th>
+                <th>Ubah Status</th>
+              </tr>
+            </thead>
+            <tbody id="admin-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
     </article>
+  </main>
 
-    <!-- CARD 2 -->
-    <article class="card">
-      <h3>Poster Event</h3>
-      <p>Status: Selesai</p>
-      <p>Deadline: 20 Februari 2026</p>
-    </article>
+  <footer class="footer">
+    <section class="footer-col">
+      <h4>PixelStudio Admin</h4>
+      <p>Panel manajemen pesanan desain.</p>
+    </section>
+    <section class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="order.html">Kelola Pesanan</a></li>
+        <li><a href="packages.html">Kelola Paket</a></li>
+      </ul>
+    </section>
+    <section class="footer-col">
+      <h4>Kontak</h4>
+      <address>
+        <p>📧 admin@pixelstudio.com</p>
+      </address>
+    </section>
+  </footer>
 
-  </section>
-
-</main>
-
+  <output id="notification" role="status" aria-live="polite"></o>
+  <script src="script.js"></script>
 </body>
 </html>
